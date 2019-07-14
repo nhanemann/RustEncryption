@@ -5,6 +5,9 @@ Summer 2019, Portland State University
 
 Public key encryption/decryption program in Rust
 
+This project is using the GNU General Public License 3.0,
+which can be found in the LICENSE.txt file in this repository, or online from the Free Software Foundation.
+
 [Project is currently mostly incomplete]
 
 In this project, I will implement a public key encryption algorithm, which was initially provided by Dr. Sarah Mocas in her Cryptography course at Portland State.
