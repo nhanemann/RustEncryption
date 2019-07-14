@@ -1,7 +1,7 @@
 # RustEncryption
 Public key encryption/decryption program in Rust
 
-[Project is currently almost entirely incomplete]
+[Project is currently mostly incomplete]
 
 This project is done for the Rust course at Portland State.
 
