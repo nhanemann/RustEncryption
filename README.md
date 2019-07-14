@@ -7,6 +7,8 @@ This project is done for the Rust course at Portland State.
 
 In this project, I will implement a public key encryption algorithm, which was initially provided by Dr. Sarah Mocas in her Cryptography course at Portland State.
 
+The current plan is to implement the encryption in 7 character blocks (ie: 56bit).
+
 The functionality that the final product will have will include the following:
   - Generate a private key consisting of 3 numbers
   - Generate a corresponding public key also consisting of 3 numbers
