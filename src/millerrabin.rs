@@ -1,7 +1,6 @@
-/* Add these lines to the [dependencies] section of your Cargo.toml file:
-num = "0.2.0"
-rand = "0.6.5"
-*/
+/// The code in this file is obtained from https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test#Rust
+/// 
+///
  
 use num::bigint::BigInt;
 use num::bigint::ToBigInt;
