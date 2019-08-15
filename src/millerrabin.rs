@@ -1,5 +1,5 @@
 /// The code in this file is obtained from https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test#Rust
-/// 
+/// I, Nicholas Hanemann, did NOT write this, though I did modify the scope of some functions.
 ///
  
 use num::bigint::BigInt;
@@ -8,7 +8,7 @@ use num::bigint::ToBigInt;
  
 // The modular_exponentiation() function takes three identical types
 // (which get cast to BigInt), and returns a BigInt:
-fn modular_exponentiation<T: ToBigInt>(n: &T, e: &T, m: &T) -> BigInt {
+pub fn modular_exponentiation<T: ToBigInt>(n: &T, e: &T, m: &T) -> BigInt {
     // Convert n, e, and m to BigInt:
     let n = n.to_bigint().unwrap();
     let e = e.to_bigint().unwrap();
@@ -49,7 +49,7 @@ fn modular_exponentiation<T: ToBigInt>(n: &T, e: &T, m: &T) -> BigInt {
 // is_prime() checks the passed-in number against many known small primes.
 // If that doesn't determine if the number is prime or not, then the number
 // will be passed to the is_rabin_miller_prime() function:
-fn is_prime<T: ToBigInt>(n: &T) -> bool {
+pub fn is_prime<T: ToBigInt>(n: &T) -> bool {
     let n = n.to_bigint().unwrap();
     if n.clone() < 2.to_bigint().unwrap() {
         return false
@@ -94,7 +94,7 @@ fn is_prime<T: ToBigInt>(n: &T) -> bool {
 // Note:  "use bigint::RandBigInt;"  (which is needed for gen_bigint_range())
 //        fails to work in the Rust playground ( https://play.rust-lang.org ).
 //        Therefore, I'll create my own here:
-fn get_random_bigint(low: &BigInt, high: &BigInt) -> BigInt {
+pub fn get_random_bigint(low: &BigInt, high: &BigInt) -> BigInt {
     if low == high {  // base case
         return low.clone()
     }
@@ -114,7 +114,7 @@ fn get_random_bigint(low: &BigInt, high: &BigInt) -> BigInt {
 // k is the number of times for testing (pass in None to use 5 (the default)).
 fn is_rabin_miller_prime<T: ToBigInt>(n: &T, k: Option<usize>) -> bool {
     let n = n.to_bigint().unwrap();
-    let k = k.unwrap_or(5);  // number of times for testing (defaults to 5)
+    let k = k.unwrap_or(150);  // number of times for testing (defaults to 5)
  
     use num::traits::{Zero, One};  // for Zero::zero() and One::one()
     let zero: BigInt = Zero::zero();
