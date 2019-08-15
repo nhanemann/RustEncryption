@@ -19,9 +19,10 @@ The functionality that the it has includes the following:
   - Given the proper key and a ciphertext, decrypt it into plaintext
   
 These actions will be done via command line, using the following arguments:
-	keygen
-	encrypt [file_to_encrypt]
-	decrypt
+  - keygen
+  - encrypt [file_to_encrypt]
+  - decrypt
+
 Key files, encrypted files, and decrypted files are placed in the active directory.
 
 The first user would call on the keygen to generate a priKey.txt and pubKey.txt file.
