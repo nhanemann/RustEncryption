@@ -1,5 +1,5 @@
 // Copyright © 2019 Nicholas Hanemann
-// [This program is licensed under the GNU license]
+// [This program is licensed under the GNU General Public License 3.0]
 // Please see the file LICENSE in the source
 // distribution of this software for license terms.
 
