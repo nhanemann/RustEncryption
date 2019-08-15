@@ -3,10 +3,12 @@
 // Please see the file LICENSE in the source
 // distribution of this software for license terms.
 
-///This file is the main launching point for work, and also includes file IO functions
+//This file is the main launching point for work, and also includes file IO functions.
+//Most functions can't be easily tested because of their I/O nature or their nature
+//of requiring all other program functionality to be accurately tested.
+
 mod decrypt;
 mod encrypt;
-
 mod keygen;
 mod millerrabin;
 
@@ -190,4 +192,14 @@ fn bad_key() -> bool {
     let ct = text_int_compile(ciphertext);
     let y = decrypt::decrypt(ct, key_read("priKey.txt"));
     y == "~~~debug~~~"
+}
+
+//--------TESTS BELOW HERE------------------------------
+#[test]
+fn test_tic() {
+    assert_eq!(vec![100u64], text_int_compile("100".to_string()));
+    assert_eq!(
+        vec![1u64, 2u64, 3u64],
+        text_int_compile("   1 2 3 ".to_string())
+    );
 }
